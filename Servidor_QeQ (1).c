@@ -9,7 +9,7 @@
 #include <ctype.h>
 #include <pthread.h>
 #include <string.h>
-#define port 50015
+#define port 9090
 #define MAX 100
 //preferencias -std=c99 `mysql_config --cflags --libs`
 //ejecucion gcc -o prop prog.c `mysql_config --cflags --libs`
@@ -52,14 +52,18 @@ void Dameconectados (ListaConectados *lista, char conectados [512])
 // pone en conectados todos los nombres separados por /, primero pone el numero de conectados
 {
 	strcpy(conectados,"");
+	
+	//indicamos cuantos usuarios estan conectados
+	sprintf(conectados,"%d/", lista->num);
+	
 	for (int i=0;  i<lista->num; i++)
-	{
-		sprintf(conectados, "%s%s\n", conectados, lista->conectados[i].nombre);
+	{	
+		// añadimos los usuarios conectados uno por uno
+		sprintf(conectados, "%s%s,", conectados, lista->conectados[i].nombre);
 	}
-	strcat(conectados,"\0");
 	
 	if (lista->num==0)
-		strcpy(conectados,"0\0");
+		strcpy(conectados,"0");
 }
 
 int Damesocket (ListaConectados *lista, char nombre [20])
@@ -134,7 +138,10 @@ void *AtenderCliente( void *socket)
 	}
 	
 	//inicializar la conexión
-	conn =mysql_real_connect(conn,"shiva2.upc.es","root","mysql","M4_juego",0,NULL,0);
+	//conn =mysql_real_connect(conn,"shiva2.upc.es","root","mysql","M4_juego",0,NULL,0);
+	
+	conn =mysql_real_connect(conn,"localhost","root","mysql","juego",0,NULL,0);
+	
 	if(conn==NULL)
 	{
 		printf("Error al iniciar la conexión: %u %s\n",
@@ -142,18 +149,17 @@ void *AtenderCliente( void *socket)
 		exit(1);
 	}
 	
-	int sock_conn;
+	int sock_conn, socket_invitador,socket_invitado;
 	int *s;
 	s=(int *) socket;
 	sock_conn=*s;
 	//int sock_conn= * (int*) socket;
 	
-	char peticion[512];
-	char respuesta[512];
+	
 	int ret;
 	char buff[512];
 	char buff2[512];
-	char notificacion [500];
+	char notificacion [512];
 	int err;
 	MYSQL_ROW row;
 	int rondas ,ID_ganador, duracion;
@@ -435,7 +441,7 @@ void *AtenderCliente( void *socket)
 					printf("No se han obtenido datos de la consulta \n");
 				else
 					//matriz con una fila y una columna
-					sprintf(buff2,"%s tiene el record con %d rondas.",row[0],rondas_record);
+					sprintf(buff2,"3/%s tiene el record con %d rondas.",row[0],rondas_record);
 				printf("%s tiene el record con %d rondas\n",row[0],rondas_record);
 		}
 		
@@ -464,7 +470,7 @@ void *AtenderCliente( void *socket)
 			}
 			else 
 			{
-				sprintf(buff2,"Personaje 1: %s.", row[0]);
+				sprintf(buff2,"4/Personaje 1: %s.", row[0]);
 				row = mysql_fetch_row (resultado);
 				char frase[100];
 				sprintf (frase, " Personaje 2: %s", row[0]);
@@ -500,15 +506,43 @@ void *AtenderCliente( void *socket)
 				while (row !=NULL) 
 			{
 					// la columna 0 contiene el ID del jugador
-					sprintf (buff2,"Ha jugado %s partidas", row[0]);
+					sprintf (buff2,"5/Ha jugado %s partidas", row[0]);
 			}
 				
 		}
-		
-		
+		else if (codigo == 7)
+			// cuando el cliente invita a otra persona
+		{
+			char nombre_invitado [20];
+			p = strtok( NULL, "/");
+			strcpy (nombre_invitado, p);
 			
+			socket_invitado = Damesocket(&milista,nombre_invitado);
+			sprintf (buff2,"7/%s",nombre);
+			
+			write (socket_invitado,buff2, strlen(buff2));
+			strcpy(buff2,"");
+			
+		}
+		else if (codigo == 8)
+			// cuando invitan al cliente
+		{
+			char nombre_invitador [20];
+			p = strtok( NULL, "/");
+			strcpy (nombre_invitador, p);
+			p = strtok( NULL, "/");
+			char respuesta[1];
+			strcpy (respuesta, p);
+			
+			socket_invitador = Damesocket(&milista,nombre_invitador);
+			
+			sprintf (buff2,"8/%s",respuesta);
+			
+			write (socket_invitador,buff2, strlen(buff2));
+			strcpy(buff2,"");
+		}
 		
-		if(codigo!=0)
+		if((codigo!=0) && (codigo!=7) && (codigo!= 8))
 		{
 			printf ("%s\n", buff2);
 			// Y lo enviamos
