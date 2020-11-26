@@ -1,0 +1,8 @@
+C:\SO\video3\SO_sucio\V1\bin\Debug\QuienEsQuien.exe
+C:\SO\video3\SO_sucio\V1\bin\Debug\QuienEsQuien.pdb
+C:\SO\video3\SO_sucio\V1\obj\x86\Debug\V1.Form1.resources
+C:\SO\video3\SO_sucio\V1\obj\x86\Debug\QuienEsQuien.Properties.Resources.resources
+C:\SO\video3\SO_sucio\V1\obj\x86\Debug\QuienEsQuien.csproj.GenerateResource.Cache
+C:\SO\video3\SO_sucio\V1\obj\x86\Debug\QuienEsQuien.exe
+C:\SO\video3\SO_sucio\V1\obj\x86\Debug\QuienEsQuien.pdb
+C:\SO\video3\SO_sucio\V1\obj\x86\Debug\QuienEsQuien.csprojResolveAssemblyReference.cache
