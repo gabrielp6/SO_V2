@@ -14,3 +14,11 @@ C:\Users\mirei\OneDrive\Documents\UNI\2B\SO\Proyecto\Sucio\Proyecto\SO_V2\V1\obj
 C:\Users\mirei\OneDrive\Documents\UNI\2B\SO\Proyecto\Sucio\Proyecto\SO_V2\V1\obj\x86\Debug\V1.Form1.resources
 C:\Users\mirei\OneDrive\Documents\UNI\2B\SO\Proyecto\Sucio\Proyecto\SO_V2\V1\obj\x86\Debug\QuienEsQuien.Properties.Resources.resources
 C:\Users\mirei\OneDrive\Documents\UNI\2B\SO\Proyecto\Sucio\Proyecto\SO_V2\V1\obj\x86\Debug\QuienEsQuien.csproj.GenerateResource.Cache
+C:\Users\mirei\OneDrive\Documents\UNI\2B\SO\Proyecto\Sucio\Proyecto\SO_V22\V1\obj\x86\Debug\QuienEsQuien.exe
+C:\Users\mirei\OneDrive\Documents\UNI\2B\SO\Proyecto\Sucio\Proyecto\SO_V22\V1\obj\x86\Debug\QuienEsQuien.pdb
+C:\Users\mirei\OneDrive\Documents\UNI\2B\SO\Proyecto\Sucio\Proyecto\SO_V22\V1\bin\Debug\QuienEsQuien.exe
+C:\Users\mirei\OneDrive\Documents\UNI\2B\SO\Proyecto\Sucio\Proyecto\SO_V22\V1\bin\Debug\QuienEsQuien.pdb
+C:\Users\mirei\OneDrive\Documents\UNI\2B\SO\Proyecto\Sucio\Proyecto\SO_V22\V1\obj\x86\Debug\QuienEsQuien.csprojResolveAssemblyReference.cache
+C:\Users\mirei\OneDrive\Documents\UNI\2B\SO\Proyecto\Sucio\Proyecto\SO_V22\V1\obj\x86\Debug\V1.Form1.resources
+C:\Users\mirei\OneDrive\Documents\UNI\2B\SO\Proyecto\Sucio\Proyecto\SO_V22\V1\obj\x86\Debug\QuienEsQuien.Properties.Resources.resources
+C:\Users\mirei\OneDrive\Documents\UNI\2B\SO\Proyecto\Sucio\Proyecto\SO_V22\V1\obj\x86\Debug\QuienEsQuien.csproj.GenerateResource.Cache

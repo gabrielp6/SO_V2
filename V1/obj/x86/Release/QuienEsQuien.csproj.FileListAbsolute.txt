@@ -1,7 +1,0 @@
-C:\Users\mirei\OneDrive\Documents\UNI\2B\SO\Proyecto\Sucio\Proyecto\SO_V2\V1\bin\Release\QuienEsQuien.exe
-C:\Users\mirei\OneDrive\Documents\UNI\2B\SO\Proyecto\Sucio\Proyecto\SO_V2\V1\bin\Release\QuienEsQuien.pdb
-C:\Users\mirei\OneDrive\Documents\UNI\2B\SO\Proyecto\Sucio\Proyecto\SO_V2\V1\obj\x86\Release\V1.Form1.resources
-C:\Users\mirei\OneDrive\Documents\UNI\2B\SO\Proyecto\Sucio\Proyecto\SO_V2\V1\obj\x86\Release\QuienEsQuien.Properties.Resources.resources
-C:\Users\mirei\OneDrive\Documents\UNI\2B\SO\Proyecto\Sucio\Proyecto\SO_V2\V1\obj\x86\Release\QuienEsQuien.csproj.GenerateResource.Cache
-C:\Users\mirei\OneDrive\Documents\UNI\2B\SO\Proyecto\Sucio\Proyecto\SO_V2\V1\obj\x86\Release\QuienEsQuien.exe
-C:\Users\mirei\OneDrive\Documents\UNI\2B\SO\Proyecto\Sucio\Proyecto\SO_V2\V1\obj\x86\Release\QuienEsQuien.pdb
